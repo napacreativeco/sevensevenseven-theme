@@ -2,7 +2,7 @@
   {% case block.type %}
     {% when 'release' %}
       <div class="release {{ block.shopify_attributes }}">
-        {{ block.settings.image | image_url: width: 2048 | image_tag }}
+        {{ block.settings.release_artwork | image_url: width: 2048 | image_tag }}
       </div>
   {% endcase %}
 {% endfor %}
