@@ -1,0 +1,48 @@
+{% for block in section.blocks %}
+  {% case block.type %}
+    {% when 'release' %}
+      <div class="release {{ block.shopify_attributes }}">
+        {{ block.settings.image | image_url: width: 2048 | image_tag }}
+      </div>
+  {% endcase %}
+{% endfor %}
+
+
+
+{% schema %}
+{
+  "name": "Discography",
+  "tag": "section",
+  "class": "discography",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Slideshow"
+    }
+  ],
+  "blocks": [
+     {
+       "name": "Artwork",
+       "type": "release",
+       "settings": [
+         {
+           "type": "image_picker",
+           "id": "release_artwork",
+           "label": "Artwork"
+         },
+         {
+            "type": "text",
+            "id": "release_title",
+            "label": "Artist"
+          },
+         {
+            "type": "text",
+            "id": "artist_name",
+            "label": "Artist"
+          }
+       ]
+     }
+   ]
+}
+{% endschema %}

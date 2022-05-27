@@ -1,0 +1,8 @@
+{% comment %}
+    Note on checkout link: it is a good idea to avoid linking to /checkout directly because shops that use 
+    Paypal Express Checkout and/or Google Checkout have special checkout buttons on the /cart page. Also,
+    special instructions for the seller are entered on the /cart page. Finally, the universal tracking code 
+    of Google Analytics may not work if linking directly to the /checkout page.
+{% endcomment %}
+        
+<a href="/cart">{{ cart.item_count }} {{ cart.item_count | pluralize: 'item', 'items' }} ({{ cart.total_price | money }})</a>

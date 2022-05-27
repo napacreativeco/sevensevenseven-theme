@@ -111,6 +111,7 @@ input, select {
     --black: #000000;
     --white: #ffffff;
     --red: #FE0F00;
+    --border-padding: 20px;
 }
 
 /*
