@@ -1,6 +1,51 @@
 <style>
     .discography-container {
         display: grid;
+        padding-top: 40px;
+    }
+    .discography-container .release {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .discography-container .image {
+      margin-bottom: 24px;
+      cursor: pointer;
+    }
+    .discography-container .titles p {
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 3rem;
+      padding: 0 0 20px 0;
+    }
+    .discography-container ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+    .discography-container .links li {
+        margin: 10px 0;
+    }
+    .discography-container .links li a {
+        text-transform: uppercase;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+    .discography-container .links li a:hover {
+        color: var(--red);
+    }
+    /* Accordion */
+    .release-info {
+      /* height: 0;
+      overflow: hidden; */
+        transition: height 0.3s;
+        -ms-overflow-style: none; /* for Internet Explorer, Edge */
+        scrollbar-width: none; /* for Firefox */
+    }
+    .release-info::-webkit-scrollbar {
+        display: none; /* for Chrome, Safari, and Opera */
     }
 </style>
 
@@ -9,16 +54,70 @@
         {% case block.type %}
             {% when 'release' %}
                 <div class="release {{ block.shopify_attributes }}">
-                    <div class="image">
+                    <div class="image" onclick="releaseInfo()">
                         <img src="{{ block.settings.release_artwork | image_url: width: 2048 }}" alt="{{ block.settings.release_title }} by {{ block.settings.artist_name }}" />
                     </div>
+                    <div class="release-info" style="height: 0px; overflow: hidden;">
+
+                      <div class="titles">
+                        <p>{{ block.settings.release_title }}</p>
+                        <p>{{ block.settings.artist_name }}</p>
+                      </div>
+
+                      <div class="links">
+                        <ul>
+                          <li>
+                            <a href="{{ block.settings.youtube }}" title="{{ block.settings.artist_name }} on YouTube">YouTube</a>
+                          </li>
+                          <li>
+                            <a href="{{ block.settings.spotify }}" title="{{ block.settings.artist_name }} on Spotify">Spotify</a>
+                          </li>
+                          <li>
+                            <a href="{{ block.settings.apple_music }}" title="{{ block.settings.artist_name }} on Apple Music">Apple Music</a>
+                          </li>
+                          <li>
+                            <a href="{{ block.settings.itunes_store }}" title="{{ block.settings.artist_name }} on iTunes Store">iTunes Store</a>
+                          </li>
+                          <li>
+                            <a href="{{ block.settings.tidal }}" title="{{ block.settings.artist_name }} on Tidal">Tidal</a>
+                          </li>
+                          <li>
+                            <a href="{{ block.settings.soundcloud }}" title="{{ block.settings.artist_name }} on Soundcloud">Soundcloud</a>
+                          </li>
+                          <li>
+                            <a href="{{ block.settings.pandora }}" title="{{ block.settings.artist_name }} on Pandora">Pandora</a>
+                          </li>
+                          <li>
+                            <a href="{{ block.settings.deezer }}" title="{{ block.settings.artist_name }} on Deezer">Deezer</a>
+                          </li>
+                          <li>
+                            <a href="{{ block.settings.audiomack }}" title="{{ block.settings.artist_name }} on Audiomack">Audiomack</a>
+                          </li>
+                        </ul>
+                      </div>
+
+                    </div>
+                    
                 </div>
         {% endcase %}
     {% endfor %}
 
 </div>
 
+<script>
+  function releaseInfo() {
+    var infoBlock = document.querySelector('.release-info');
 
+    if ( infoBlock.style.height == '0px' ) {
+      infoBlock.style.height = '100%';
+      infoBlock.style.overflow = 'auto';
+    } else {
+      infoBlock.style.height = '0px';
+      infoBlock.style.overflow = 'hidden';
+    }
+
+  }
+</script>
 
 
 {% schema %}

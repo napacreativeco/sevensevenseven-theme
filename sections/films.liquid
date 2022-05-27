@@ -1,0 +1,37 @@
+{% schema %}
+{
+  "name": "Films",
+  "tag": "section",
+  "class": "films",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Films"
+    }
+  ],
+  "blocks": [
+     {
+       "name": "Film",
+       "type": "film",
+       "settings": [
+         {
+           "type": "image_picker",
+           "id": "cover_artwork",
+           "label": "Cover Artwork"
+         },
+         {
+            "type": "text",
+            "id": "film_title",
+            "label": "Title"
+          },
+          {
+            "type": "text",
+            "id": "artist_name",
+            "label": "Artist"
+          }
+       ]
+     }
+   ]
+}
+{% endschema %}
