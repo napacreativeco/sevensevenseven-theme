@@ -1,0 +1,30 @@
+<style>
+  .products li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
+
+{% comment %}
+  Important notes about pagination:
+  - Never access collection.products before the opening paginate tag.
+  - Never paginate by more than 50.
+{% endcomment %}
+
+{% paginate collection.products by 10 %}
+
+  {% for product in collection.products %}
+    <ul class="products">
+      {% include 'product-item' %}
+    </ul>
+  {% else %}
+    <p>There are no products in this view.</p>
+  {% endfor %}
+
+  {% if paginate.pages > 1 %}
+    {{ paginate | default_pagination }}
+  {% endif %}
+
+{% endpaginate %}
