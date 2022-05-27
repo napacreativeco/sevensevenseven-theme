@@ -1,10 +1,52 @@
+<style>
+    .films-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .films-container ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        width: 100%;
+    }
+    .films-container li {
+        margin: 20px 0;
+    }
+    .films-container li a {
+      text-transform: uppercase;
+    }
+    .films-container li a:hover {
+      color: var(--red);
+    }
+    .films-container .film-item {
+      position: relative;
+    }
+
+</style>
+
+
 <div class="films-container">
-    {% for block in section.blocks %}
-        {% case block.type %}
-            {% when 'films' %}
-                <img src="{{ block.settings.cover_artwork | image_url: width: 2048 }}" alt="{{ block.settings.film_title }} by {{ block.settings.artist_name }}" />
-        {% endcase %}
-    {% endfor %}
+    <ul>
+        {% for block in section.blocks %}
+            {% case block.type %}
+                {% when 'film' %}
+                    <li class="film-item">
+                        <div class="video-embed">
+                            {{ block.settings.video_embed }}
+                        </div> 
+                        <div class="title">
+                            <p>{{ block.settings.film_title }}</p>
+                            <p>{{ block.settings.artist_name }}</p>
+                        </div>
+                    </li>
+            {% endcase %}
+        {% endfor %}
+    </ul>
+
 </div>
 
 
@@ -28,9 +70,9 @@
        "type": "film",
        "settings": [
          {
-           "type": "image_picker",
-           "id": "cover_artwork",
-           "label": "Cover Artwork"
+           "type": "textarea",
+           "id": "video_embed",
+           "label": "Embed Code"
          },
          {
             "type": "text",
@@ -41,6 +83,11 @@
             "type": "text",
             "id": "artist_name",
             "label": "Artist"
+          },
+          {
+            "type": "text",
+            "id": "film_link",
+            "label": "Embed Code"
           }
        ]
      }
