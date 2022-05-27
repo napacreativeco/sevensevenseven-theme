@@ -8,12 +8,7 @@
           "settings": {
             "release_artwork": "shopify:\/\/shop_images\/yung-kayo.png",
             "release_title": "DFTK",
-            "artist_name": "Yung Kayo"
-          }
-        },
-        "7097c6d6-cb7d-4a5a-a45a-f5b3ee625012": {
-          "type": "artistlinks",
-          "settings": {
+            "artist_name": "Yung Kayo",
             "youtube": "#",
             "spotify": "#",
             "apple_music": "#",
@@ -27,8 +22,7 @@
         }
       },
       "block_order": [
-        "5a3a748f-dec3-4361-8bc6-0d08f731d393",
-        "7097c6d6-cb7d-4a5a-a45a-f5b3ee625012"
+        "5a3a748f-dec3-4361-8bc6-0d08f731d393"
       ],
       "settings": {
       }
