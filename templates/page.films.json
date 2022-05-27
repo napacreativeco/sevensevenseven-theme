@@ -6,7 +6,7 @@
         "ad8992c5-5a52-463d-91a7-8dfbcc4a1978": {
           "type": "film",
           "settings": {
-            "cover_artwork": "shopify:\/\/shop_images\/crystal-clear--yung-kayo.png",
+            "video_embed": "<iframe width=\"560\" height=\"315\" src=\"https:\/\/www.youtube.com\/embed\/xDmUOKfSaUE?controls=0\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen><\/iframe>",
             "film_title": "Crystal Clear",
             "artist_name": "Yung Kayo"
           }
