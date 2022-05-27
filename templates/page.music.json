@@ -11,8 +11,8 @@
             "artist_name": "Yung Kayo"
           }
         },
-        "0c3ea4f9-438b-473e-b4da-f738af4bf89c": {
-          "type": "artist_links",
+        "7097c6d6-cb7d-4a5a-a45a-f5b3ee625012": {
+          "type": "artistlinks",
           "settings": {
             "youtube": "#",
             "spotify": "#",
@@ -28,7 +28,7 @@
       },
       "block_order": [
         "5a3a748f-dec3-4361-8bc6-0d08f731d393",
-        "0c3ea4f9-438b-473e-b4da-f738af4bf89c"
+        "7097c6d6-cb7d-4a5a-a45a-f5b3ee625012"
       ],
       "settings": {
       }
