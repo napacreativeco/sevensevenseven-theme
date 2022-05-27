@@ -1,3 +1,15 @@
+<div class="films-container">
+    {% for block in section.blocks %}
+        {% case block.type %}
+            {% when 'films' %}
+                <img src="{{ block.settings.cover_artwork | image_url: width: 2048 }}" alt="{{ block.settings.film_title }} by {{ block.settings.artist_name }}" />
+        {% endcase %}
+    {% endfor %}
+</div>
+
+
+
+
 {% schema %}
 {
   "name": "Films",
