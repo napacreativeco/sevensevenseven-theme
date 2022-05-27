@@ -4,7 +4,9 @@
  * Resets
  *
  */
-
+* {
+    box-sizing: border-box;
+}
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 abbr, address, cite, code,
@@ -112,6 +114,9 @@ input, select {
     --white: #ffffff;
     --red: #FE0F00;
     --border-padding: 20px;
+    --arial-black: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
+    --arial: 'Arial', 'Arial', Gadget, sans-serif;
+    --max-container-width: 1400px;
 }
 
 /*
@@ -122,8 +127,9 @@ input, select {
 body {
     background: var(--black);
     color: var(--white);
-    font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
+    font-family: var(--arial-black);
     font-size: 24px;
+    overflow-x: hidden;
 }
 
 /*

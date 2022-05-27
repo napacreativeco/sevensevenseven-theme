@@ -12,9 +12,9 @@
   
   <a class="price" href="{{ product.url | within: collection }}">
     {% if product.price_varies %}From{% endif %}
-    {{ product.price | money }}
+    {{ product.price | | money_without_trailing_zeros }}
     {% if on_sale %}
-      <s class="compare-at-price">{{ product.compare_at_price | money }}</s>
+      <s class="compare-at-price">{{ product.compare_at_price | | money_without_trailing_zeros }}</s>
     {% endif %}
   </a>
 

@@ -1,9 +1,46 @@
 <style>
+  .collection-container {
+    padding: 80px 0;
+  }
+  ul.products {
+    display: grid;
+    grid-template-columns:  1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 80px;
+    width: 80%;
+    max-width: var(--max-container-width);
+    margin: 0 auto;
+  }
   .products li {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+  .products img {
+    min-width: 25vw;
+    max-width: 600px;
+  }
+  .products a.price {
+    margin-top: 20px;
+    font-size: 2.4rem;
+  }
+
+  /*
+  *
+  * MEDIA QUERIES
+  *
+  */
+  @media screen and (max-width: 750px) {
+    .collection-container {
+      padding: 40px 0px;
+    }
+    ul.products {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      padding: 20px;
+    }
   }
 </style>
 
@@ -12,20 +49,29 @@
   - Never access collection.products before the opening paginate tag.
   - Never paginate by more than 50.
 {% endcomment %}
+<div class="collection-container">
+  {% paginate collection.products by 10 %}
 
-{% paginate collection.products by 10 %}
-
-  {% for product in collection.products %}
     <ul class="products">
-      {% include 'product-item' %}
+      {% for product in collection.products %}
+      
+          {% include 'product-item' %}
+      
+      {% else %}
+        <p>There are no products in this view.</p>
+      {% endfor %}
     </ul>
-  {% else %}
-    <p>There are no products in this view.</p>
-  {% endfor %}
 
-  {% if paginate.pages > 1 %}
-    {{ paginate | default_pagination }}
-  {% endif %}
+    {% if paginate.pages > 1 %}
+      {{ paginate | default_pagination }}
+    {% endif %}
 
-{% endpaginate %}
+  {% endpaginate %}
+</div>
+
+
+
+  
+
+
 

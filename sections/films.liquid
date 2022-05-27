@@ -2,10 +2,10 @@
     .films-container {
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
         width: 100%;
-        padding: 40px 0 40px 0;
+        padding: 80px 0 40px 0;
+        min-height: 60vh;
     }
     .films-container ul {
         list-style: none;
@@ -28,7 +28,25 @@
     .films-container .video-embed {
       padding: 0 0 20px 0;
     }
+    .films-container .video-embed iframe {
+      width: 60vw;
+      height: 30vw;
+    }
 
+    @media screen and (max-width: 770px) {
+      .films-container {
+        padding: 20px 0 20px 0;
+      }
+      .films-container .video-embed iframe {
+        width: 90vw;
+        height: 44vw;
+      }
+      .films-container li p {
+        text-transform: uppercase;
+        margin: 0 0 14px 0;
+        font-size: 2.5rem;
+      }
+    }
 </style>
 
 
@@ -49,7 +67,6 @@
             {% endcase %}
         {% endfor %}
     </ul>
-
 </div>
 
 

@@ -27,10 +27,10 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
   }
   nav li {
-    margin: 0 20px 0 0;
+    margin: 0 80px 0 0;
   }
   nav li:last-of-type {
     margin: 0;
@@ -63,6 +63,17 @@
     position: relative;
   }
   .js-my-cart-open { right: 0 !important; }
+
+  /*
+  * =====================================
+  * MEDIA QUERIES
+  * =====================================
+  */
+  @media screen and (max-width: 770px) {
+    nav.desktop {
+      display: none;
+    }
+  }
 </style>
 
 <header class="">
@@ -81,48 +92,66 @@
     * Navigation
     *
     {% endcomment %}
-    <nav role="navigation">
+    <nav role="navigation" class="desktop">
+
       <ul>
+
         {% for link in linklists.main-menu.links %}
-        {% assign has_sub_menu = false %}
-        {% assign has_sub_categories = false %}
-        {% assign parent_link_active = false %}
-        {% assign child_list_handle = link.title | handle %}
-        {% if linklists[child_list_handle] and linklists[child_list_handle].links.size > 0 %}
-          {% assign has_sub_menu = true %}
-          {% for l in linklists[child_list_handle].links %}
-            {% if handle != blank and handle == l.object.handle %}
-              {% assign parent_link_active = true %}
-            {% elsif page_title == l.title %}
-              {% assign parent_link_active = true %}
-            {% endif %}
-          {% endfor %}
-        {% elsif link.type == 'collection_link' and link.object.all_tags.size > 0 %}
-          {% assign has_sub_categories = true %}
-        {% endif %}
-        <li class="{% if link.active or parent_link_active %} active{% endif %}{% if has_sub_menu or has_sub_categories %} has-dropdown{% endif %}{% if forloop.first %} first{% elsif forloop.last %} last{% endif %}">
-          <a href="{{ link.url }}">{{ link.title }}{% if has_sub_menu or has_sub_categories %} <i class="fa fa-angle-down"></i>{% endif %}</a> 
-          {% if has_sub_menu or has_sub_categories %}
-          <ul>
-            {% if has_sub_menu %}
-              {% for l in linklists[child_list_handle].links %}
-              <li class="{% if l.active %} active{% endif %}">
-                <a href="{{ l.url }}">{{ l.title }}</a>
-              </li>
-              {% endfor %}
-            {% elsif has_sub_categories %}
-              {% for tag in link.object.all_tags %}
-              <li class="{% if current_tags contains tag %} active{% endif %}">
-                <a href="{{ link.url }}/{{ tag | handle }}">{{ tag }}</a>
-              </li>
-              {% endfor %}
-            {% endif %}
-          </ul>
+          {% assign has_sub_menu = false %}
+          {% assign has_sub_categories = false %}
+          {% assign parent_link_active = false %}
+          {% assign child_list_handle = link.title | handle %}
+
+          {% if linklists[child_list_handle] and linklists[child_list_handle].links.size > 0 %}
+            {% assign has_sub_menu = true %}
+            
+            {% for l in linklists[child_list_handle].links %}
+
+              {% if handle != blank and handle == l.object.handle %}
+                {% assign parent_link_active = true %}
+              {% elsif page_title == l.title %}
+                {% assign parent_link_active = true %}
+              {% endif %}
+
+            {% endfor %}
+
+          {% elsif link.type == 'collection_link' and link.object.all_tags.size > 0 %}
+
+            {% comment %} REMOVED: {% assign has_sub_categories = true %} {% endcomment %}
+
           {% endif %}
+
+          <li class="{% if link.active or parent_link_active %} active{% endif %}{% if has_sub_menu or has_sub_categories %} has-dropdown{% endif %}{% if forloop.first %} first{% elsif forloop.last %} last{% endif %}">
+            <a href="{{ link.url }}">{{ link.title }}{% if has_sub_menu or has_sub_categories %} <i class="fa fa-angle-down"></i>{% endif %}</a> 
+
+            {% if has_sub_menu or has_sub_categories %}
+
+              <ul>
+                {% if has_sub_menu %}
+                  {% for l in linklists[child_list_handle].links %}
+                  <li class="{% if l.active %} active{% endif %}">
+                    <a href="{{ l.url }}">{{ l.title }}</a>
+                  </li>
+                  {% endfor %}
+                {% elsif has_sub_categories %}
+                  {% for tag in link.object.all_tags %}
+                  <li class="{% if current_tags contains tag %} active{% endif %}">
+                    <a href="{{ link.url }}/{{ tag | handle }}">{{ tag }}</a>
+                  </li>
+                  {% endfor %}
+                {% endif %}
+              </ul>
+
+          {% endif %}
+
         </li>
+
         {% endfor %}
+
       </ul>
+
     </nav>
+
   {% endif %}
 
 </header>
@@ -135,9 +164,10 @@
 *
 * Mini Cart Overlay
 *
-{% endcomment %}
+
 <div class="cart-overlay">
   <div class="row">
     {% section 'mini-cart' %}
   </div>
 </div>
+{% endcomment %}
