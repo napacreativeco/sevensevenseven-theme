@@ -19,9 +19,11 @@
     {% for block in section.blocks %}
         {% if block.type == 'artist_links' %}
                 <div class="release {{ block.shopify_attributes }}">
-                    <div>
-                        {{ block.settings.spotify }}
-                    </div>
+                    {% for settings in block.settings %}
+                        <div>
+                            {{ block.artistlinks.label }}
+                        </div>
+                    {% endfor %}
                 </div>
         {% endif %}
     {% endfor %}
@@ -59,7 +61,7 @@
      },
      {
         "name": "Artist Links",
-        "type": "artist_links",
+        "type": "artistlinks",
         "settings": [
           {
              "type": "text",
