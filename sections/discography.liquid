@@ -16,17 +16,6 @@
         {% endcase %}
     {% endfor %}
 
-    {% for block in section.blocks %}
-        {% if block.type == 'artist_links' %}
-                <div class="release {{ block.shopify_attributes }}">
-                    {% for settings in block.settings %}
-                        <div>
-                            {{ block.artistlinks.label }}
-                        </div>
-                    {% endfor %}
-                </div>
-        {% endif %}
-    {% endfor %}
 </div>
 
 
@@ -56,60 +45,54 @@
             "type": "text",
             "id": "artist_name",
             "label": "Artist"
-          }
+          },
+          {
+            "type": "text",
+            "id": "youtube",
+            "label": "Youtube"
+          },
+         {
+            "type": "text",
+            "id": "spotify",
+            "label": "Spotify"
+          },
+          {
+           "type": "text",
+           "id": "apple_music",
+           "label": "Apple Music"
+         },
+         {
+           "type": "text",
+           "id": "itunes_store",
+           "label": "iTunes Store"
+         },
+         {
+           "type": "text",
+           "id": "tidal",
+           "label": "Tidal"
+         },
+         {
+           "type": "text",
+           "id": "soundcloud",
+           "label": "Soundcloud"
+         },
+         {
+           "type": "text",
+           "id": "pandora",
+           "label": "Pandora"
+         },
+         {
+           "type": "text",
+           "id": "deezer",
+           "label": "Deezer"
+         },
+         {
+           "type": "text",
+           "id": "audiomack",
+           "label": "Audiomack"
+         }
        ]
-     },
-     {
-        "name": "Artist Links",
-        "type": "artistlinks",
-        "settings": [
-          {
-             "type": "text",
-             "id": "youtube",
-             "label": "Youtube"
-           },
-          {
-             "type": "text",
-             "id": "spotify",
-             "label": "Spotify"
-           },
-           {
-            "type": "text",
-            "id": "apple_music",
-            "label": "Apple Music"
-          },
-          {
-            "type": "text",
-            "id": "itunes_store",
-            "label": "iTunes Store"
-          },
-          {
-            "type": "text",
-            "id": "tidal",
-            "label": "Tidal"
-          },
-          {
-            "type": "text",
-            "id": "soundcloud",
-            "label": "Soundcloud"
-          },
-          {
-            "type": "text",
-            "id": "pandora",
-            "label": "Pandora"
-          },
-          {
-            "type": "text",
-            "id": "deezer",
-            "label": "Deezer"
-          },
-          {
-            "type": "text",
-            "id": "audiomack",
-            "label": "Audiomack"
-          }
-        ]
-      }
+     }
    ]
 }
 {% endschema %}
