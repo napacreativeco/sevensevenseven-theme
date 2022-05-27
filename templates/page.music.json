@@ -10,13 +10,27 @@
             "release_title": "DFTK",
             "artist_name": "Yung Kayo"
           }
+        },
+        "0c3ea4f9-438b-473e-b4da-f738af4bf89c": {
+          "type": "artist_links",
+          "settings": {
+            "youtube": "#",
+            "spotify": "#",
+            "apple_music": "#",
+            "itunes_store": "#",
+            "tidal": "#",
+            "soundcloud": "#",
+            "pandora": "#",
+            "deezer": "#",
+            "audiomack": "#"
+          }
         }
       },
       "block_order": [
-        "5a3a748f-dec3-4361-8bc6-0d08f731d393"
+        "5a3a748f-dec3-4361-8bc6-0d08f731d393",
+        "0c3ea4f9-438b-473e-b4da-f738af4bf89c"
       ],
       "settings": {
-        "title": ""
       }
     }
   },
