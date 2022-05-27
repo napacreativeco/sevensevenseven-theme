@@ -1,10 +1,26 @@
 {
-    "sections": {
-      "main": {
-        "type": "discography"
+  "sections": {
+    "main": {
+      "type": "discography",
+      "blocks": {
+        "5a3a748f-dec3-4361-8bc6-0d08f731d393": {
+          "type": "release",
+          "settings": {
+            "release_artwork": "shopify:\/\/shop_images\/yung-kayo.png",
+            "release_title": "DFTK",
+            "artist_name": "Yung Kayo"
+          }
+        }
+      },
+      "block_order": [
+        "5a3a748f-dec3-4361-8bc6-0d08f731d393"
+      ],
+      "settings": {
+        "title": ""
       }
-    },
-    "order": [
-      "main"
-    ]
+    }
+  },
+  "order": [
+    "main"
+  ]
 }
