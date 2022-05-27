@@ -1,11 +1,32 @@
-{% for block in section.blocks %}
-  {% case block.type %}
-    {% when 'release' %}
-      <div class="release {{ block.shopify_attributes }}">
-        {{ block.settings.release_artwork | image_url: width: 2048 | image_tag }}
-      </div>
-  {% endcase %}
-{% endfor %}
+<style>
+    .discography-container {
+        display: grid;
+    }
+</style>
+
+<div class="discography-container">
+    {% for block in section.blocks %}
+        {% case block.type %}
+            {% when 'release' %}
+                <div class="release {{ block.shopify_attributes }}">
+                    <div class="image">
+                        <img src="{{ block.settings.release_artwork | image_url: width: 2048 }}" alt="{{ block.settings.release_title }} by {{ block.settings.artist_name }}" />
+                    </div>
+                </div>
+        {% endcase %}
+    {% endfor %}
+
+    {% for block in section.blocks %}
+        {% if block.type == 'artist_links' %}
+                <div class="release {{ block.shopify_attributes }}">
+                    <div>
+                        {{ block.settings.spotify }}
+                    </div>
+                </div>
+        {% endif %}
+    {% endfor %}
+</div>
+
 
 
 
