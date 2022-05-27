@@ -113,6 +113,31 @@
     {{ content_for_layout }}
   </main>
 
+  <script type="application/json" data-ajax-cart-initial-state >
+    {{ cart | json }}
+  </script>
+  
+  <script type="module">
+    import '{{ "liquid-ajax-cart-v1.9.0.js" | asset_url }}';
+  </script>
+
+  <script>
+    // Open mini-cart drawer
+    $('li.cart-link').on('click', function() {
+      jQuery('.cart-overlay').addClass('js-my-cart-open');
+    });
+
+    // Open drawer on 'Add to cart'
+    jQuery('form.single-product').on('submit', function() {
+      jQuery('.cart-overlay').addClass('js-my-cart-open');
+    });
+
+    // Close mini-cart drawer
+    jQuery('.closer > .container').on('click', function() {
+      jQuery('.cart-overlay').removeClass('js-my-cart-open');
+    });
+  </script>
+
   <footer>
     Copyright &copy; {{ "now" | date: "%Y" }} {{ shop.name }}. {{ powered_by_link }}.
   </footer>
