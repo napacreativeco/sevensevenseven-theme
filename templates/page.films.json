@@ -1,13 +1,26 @@
 {
-    "sections": {
-      "main": {
-        "type": "films",
-        "settings": {
+  "sections": {
+    "main": {
+      "type": "films",
+      "blocks": {
+        "ad8992c5-5a52-463d-91a7-8dfbcc4a1978": {
+          "type": "film",
+          "settings": {
+            "cover_artwork": "shopify:\/\/shop_images\/crystal-clear--yung-kayo.png",
+            "film_title": "Crystal Clear",
+            "artist_name": "Yung Kayo"
+          }
         }
+      },
+      "block_order": [
+        "ad8992c5-5a52-463d-91a7-8dfbcc4a1978"
+      ],
+      "settings": {
+        "title": ""
       }
-    },
-    "order": [
-      "main"
-    ]
-  }
-  
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
