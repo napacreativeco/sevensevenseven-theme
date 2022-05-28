@@ -104,6 +104,30 @@ input, select {
     vertical-align:middle;
 }
 
+
+/*
+*
+* Fonts
+*
+*/
+@font-face {
+    font-family: 'AR REGULAR';
+    src: url('arial-webfont.woff2') format('woff2'),
+         url('arial-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'AR BLACK';
+    src: url('ariblk-webfont.woff2') format('woff2'),
+         url('ariblk-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 /*
 *
 * Variables
@@ -114,8 +138,8 @@ input, select {
     --white: #ffffff;
     --red: #FE0F00;
     --border-padding: 20px;
-    --arial-black: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
-    --arial: 'Arial', 'Arial', Gadget, sans-serif;
+    --arial-black: 'AR BLACK', sans-serif;
+    --arial: 'AR REGULAR', sans-serif;
     --max-container-width: 1400px;
 }
 
