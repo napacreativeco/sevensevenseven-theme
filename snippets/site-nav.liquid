@@ -30,14 +30,14 @@
     flex-wrap: wrap;
   }
   nav li {
-    margin: 0 80px 0 0;
+    margin: 0 40px 0 0;
   }
   nav li:last-of-type {
     margin: 0;
   }
   nav a {
     text-transform: uppercase;
-    font-size: 4vw;
+    font-size: 2.8vw;
   }
   nav .active a {
     color: var(--red);
@@ -148,6 +148,9 @@
 
         {% endfor %}
 
+        <li>
+          <a href="/cart" title="Cart">Cart ({{ cart.item_count }})</a>
+        </li>
       </ul>
 
     </nav>
