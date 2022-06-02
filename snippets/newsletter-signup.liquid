@@ -1,8 +1,12 @@
 <style>
-    .form-container {
+  .form-container {
         width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: flex-end;
+        -webkit-box-pack: end;
+            -ms-flex-pack: end;
+                justify-content: flex-end;
     }
     .form-container form {
         width: 90%;
@@ -22,12 +26,48 @@
         height: 40px;
         color: var(--white);
     }
+    input#contact_email::-webkit-input-placeholder {
+        font-size: 1.8rem;
+        text-transform: uppercase;
+        color: var(--white);
+    }
+    input#contact_email::-moz-placeholder {
+        font-size: 1.8rem;
+        text-transform: uppercase;
+        color: var(--white);
+    }
+    input#contact_email:-ms-input-placeholder {
+        font-size: 1.8rem;
+        text-transform: uppercase;
+        color: var(--white);
+    }
+    input#contact_email::-ms-input-placeholder {
+        font-size: 1.8rem;
+        text-transform: uppercase;
+        color: var(--white);
+    }
     input#contact_email::placeholder,
     input.submit,
     input#contact_email {
         font-size: 1.8rem;
         text-transform: uppercase;
         color: var(--white);
+    }
+    input#contact_email::-webkit-input-placeholder {
+        position: absolute;
+        bottom: 6px;
+    }
+    input#contact_email::-moz-placeholder {
+        position: absolute;
+        bottom: 6px;
+    }
+    input#contact_email:-ms-input-placeholder {
+        position: absolute;
+        bottom: 6px;
+    }
+    input#contact_email::-ms-input-placeholder {
+        position: absolute;
+        bottom: 6px;
     }
     input#contact_email::placeholder {
         position: absolute;
@@ -44,6 +84,8 @@
         text-align: right;
         font-family: var(--arial-bold);
         cursor: pointer;
+        outline: 0;
+        border: 0;
     }
     input.submit:hover {
         color: var(--red);
@@ -86,8 +128,12 @@
             font-size: 2rem;
         }
         .submit-button {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            justify-content: center;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
             padding-top: 10px;
         }
         input.submit {
