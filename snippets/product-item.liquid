@@ -17,12 +17,5 @@
       <s class="compare-at-price">{{ product.compare_at_price | | money_without_trailing_zeros }}</s>
     {% endif %}
   </a>
-
-  {% comment %}
-    All themes by Shopify should support the Product Reviews app out of the box.
-    https://apps.shopify.com/product-reviews
-  {% endcomment %}
-  
-  <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
   
 </li>

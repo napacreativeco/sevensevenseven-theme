@@ -1,0 +1,129 @@
+<style>
+    .form-container {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .form-container form {
+        width: 90%;
+        max-width: 600px;
+    }
+    input#contact_email {
+        border: 0;
+        outline: 0;
+        background: transparent;
+        vertical-align: baseline;
+        padding: 10px 0 10px 0;
+        width: 100%;
+        border-top: 0;
+        border-right: 0;
+        border-bottom: 1px solid var(--white);
+        border-left: 0;
+        height: 40px;
+        color: var(--white);
+    }
+    input#contact_email::placeholder,
+    input.submit,
+    input#contact_email {
+        font-size: 1.8rem;
+        text-transform: uppercase;
+        color: var(--white);
+    }
+    input#contact_email::placeholder {
+        position: absolute;
+        bottom: 6px;
+    }
+    input.submit {
+        background: transparent;
+        vertical-align: baseline;
+        height: auto;
+        margin: 0;
+        padding: 0;
+        width: auto;
+        float: right;
+        text-align: right;
+        font-family: var(--arial-bold);
+        cursor: pointer;
+    }
+    input.submit:hover {
+        color: var(--red);
+    }
+    /*
+    * =====================================
+    * MEDIA QUERIES
+    * =====================================
+    */
+    @media screen and (max-width: 770px) {
+        .form-container form {
+            width: 100%;
+            max-width: 100%;
+        }
+        input#contact_email {
+            padding: 25px 0 25px 0;
+        }
+        input#contact_email::-webkit-input-placeholder {
+            text-align: center;
+            font-weight: 900;
+            font-family: var(--arial-black);
+            position: relative;
+            font-size: 2rem;
+        }
+
+        input#contact_email:-moz-placeholder { /* Firefox 18- */
+            text-align: center;  
+        }
+
+        input#contact_email::-moz-placeholder {  /* Firefox 19+ */
+            text-align: center;  
+        }
+
+        input#contact_email:-ms-input-placeholder {  
+            text-align: center; 
+        }
+        input.submit,
+        input#contact_email {
+            text-align: center;
+            font-size: 2rem;
+        }
+        .submit-button {
+            display: flex;
+            justify-content: center;
+            padding-top: 10px;
+        }
+        input.submit {
+            border: 0;
+        }
+    }
+</style>
+
+<div class="form-container">
+    {% form 'customer' %}
+        <input id="contact_tags" name="contact[tags]" type="hidden" value="prospect,newsletter" />
+
+        <div class="email-input">
+            <input id="contact_email" name="contact[email]" type="text" placeholder="Email" />
+        </div>
+        
+        <div class="submit-button">
+            <input class="submit" type="submit" value="Submit" />
+        </div>
+        
+
+        {% if form.posted_successfully? %}
+            <style>
+                .sign_up_success { visibility: visible; }
+            </style>
+
+            <script>
+                setTimeout(function() {
+                    jQuery('.sign_up_success').fadeOut();
+                }, 4000);
+                setTimeout(function() {
+                    jQuery('.sign_up_success').css('display', 'none !important');
+                }, 4100);
+            </script>
+        {% else %}
+            {{ form.errors | default_errors }}
+        {% endif %}
+    {% endform %}
+</div>

@@ -7,18 +7,22 @@
   nav.mobile {
     display: none;
     width: 100%;
-    padding: 100px 20px 20px 20px;
     border-top: 2px solid var(--white);
   }
   nav.mobile ul {
     display: flex;
     flex-direction: column;
+    padding: 100px 20px 20px 20px;
+    border-bottom: 2px solid var(--white);
   }
   nav.mobile li {
       margin: 0 0 10px 0;
   }
   nav.mobile a {
       font-size: 12vw;
+  }
+  .mobile-newsletter {
+    padding: 80px 20px 20px 20px;
   }
   /*
   * =====================================
@@ -29,6 +33,7 @@
     nav.mobile {
       display: block;
     }
+    
   }
 </style>
 
@@ -93,4 +98,8 @@
     </li>
     
     </ul>
+
+    <div class="mobile-newsletter">
+      {% render 'newsletter-signup' %}
+    </div>
 </nav>
