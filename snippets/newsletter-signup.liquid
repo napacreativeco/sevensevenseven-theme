@@ -92,6 +92,12 @@
     input.submit:hover {
         color: var(--red);
     }
+
+    /* Success */
+    .sign_up_success {
+        padding: 10px 0;
+        visibility: visible;
+    }
     /*
     * =====================================
     * MEDIA QUERIES
@@ -144,6 +150,9 @@
         input.submit {
             border: 0;
         }
+        .sign_up_success {
+            text-align: center;
+        }
     }
 </style>
 
@@ -159,11 +168,15 @@
             <input class="submit" type="submit" value="Submit" />
         </div>
         
+        <div class="sign_up_success">
+            <p>Signed up successfully.</p>
+        </div>
 
         {% if form.posted_successfully? %}
             <style>
                 .sign_up_success { visibility: visible; }
             </style>
+
 
             <script>
                 setTimeout(function() {
