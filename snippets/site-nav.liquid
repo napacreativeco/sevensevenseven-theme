@@ -10,20 +10,23 @@
 
 
 <style>
-  header {
+  .header {
     display: flex;
     flex-direction: column;
+    max-width: 100vw;
   }
   /* Logo */
   .logo {
     width: 100%;
+    max-width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
   }
   .logo img {
-    width: 80%;
-    max-width: 600px;
+    width: 600px;
+    max-width: 80%;
     margin: 0 auto;
   }
   /* Navigation */
@@ -42,6 +45,9 @@
   nav a {
     text-transform: uppercase;
     font-size: 2.8vw;
+  }
+  nav a:hover {
+    color: var(--red);
   }
   nav .active a {
     color: var(--red);
@@ -80,19 +86,19 @@
   }
 </style>
 
-<header class="">
-  {% comment %}
-  *
-  * Logo
-  *
-  {% endcomment %}
-  <div class="logo">
-    <img src="https://cdn.shopify.com/s/files/1/0558/6455/7665/files/logo.png?v=1653611436" alt="SEVENSEVENSEVEN" onclick="window.location='/';" />
-  </div>
+{% if template != 'index' %}
+  <div class="header">
+    {% comment %}
+    *
+    * Logo
+    *
+    {% endcomment %}
+    <div class="logo">
+      <img src="https://cdn.shopify.com/s/files/1/0558/6455/7665/files/logo.png?v=1653611436" alt="SEVENSEVENSEVEN" onclick="window.location='/';" />
+    </div>
 
-  {% render 'newsletter-notification' %}
+    {% render 'newsletter-notification' %}
 
-  {% if template != 'index' %}
     {% comment %}
     *
     * Navigation
@@ -103,69 +109,24 @@
       <ul>
 
         {% for link in linklists.main-menu.links %}
-          {% assign has_sub_menu = false %}
-          {% assign has_sub_categories = false %}
-          {% assign parent_link_active = false %}
-          {% assign child_list_handle = link.title | handle %}
-
-          {% if linklists[child_list_handle] and linklists[child_list_handle].links.size > 0 %}
-            {% assign has_sub_menu = true %}
-            
-            {% for l in linklists[child_list_handle].links %}
-
-              {% if handle != blank and handle == l.object.handle %}
-                {% assign parent_link_active = true %}
-              {% elsif page_title == l.title %}
-                {% assign parent_link_active = true %}
-              {% endif %}
-
-            {% endfor %}
-
-          {% elsif link.type == 'collection_link' and link.object.all_tags.size > 0 %}
-
-            {% comment %} REMOVED: {% assign has_sub_categories = true %} {% endcomment %}
-
-          {% endif %}
 
           <li class="{% if link.active or parent_link_active %} active{% endif %}{% if has_sub_menu or has_sub_categories %} has-dropdown{% endif %}{% if forloop.first %} first{% elsif forloop.last %} last{% endif %}">
             <a href="{{ link.url }}">{{ link.title }}{% if has_sub_menu or has_sub_categories %} <i class="fa fa-angle-down"></i>{% endif %}</a> 
-
-            {% if has_sub_menu or has_sub_categories %}
-
-              <ul>
-                {% if has_sub_menu %}
-                  {% for l in linklists[child_list_handle].links %}
-                  <li class="{% if l.active %} active{% endif %}">
-                    <a href="{{ l.url }}">{{ l.title }}</a>
-                  </li>
-                  {% endfor %}
-                {% elsif has_sub_categories %}
-                  {% for tag in link.object.all_tags %}
-                  <li class="{% if current_tags contains tag %} active{% endif %}">
-                    <a href="{{ link.url }}/{{ tag | handle }}">{{ tag }}</a>
-                  </li>
-                  {% endfor %}
-                {% endif %}
-              </ul>
-
-          {% endif %}
-
-        </li>
+          </li>
 
         {% endfor %}
 
         <li>
           <a href="/cart" title="Cart">Cart ({{ cart.item_count }})</a>
         </li>
+
       </ul>
 
     </nav>
 
-  {% endif %}
+</div>
 
-</header>
-
-  
+{% endif %} 
 
 
 

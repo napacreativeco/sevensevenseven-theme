@@ -49,21 +49,38 @@
 <body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}" >
   
   <header>
-
-    {% comment %}
-      Main Navigation 
-    {% endcomment %}
     {% include 'site-nav' %}
-
   </header>
 
-  {% comment %}}
-    We have a template file to render.
-    That's what content_for_layout is for.
-  {% endcomment %}
   <main role="main">
     {{ content_for_layout }}
   </main>
+
+  {% if template.name != "index" %}
+  
+    <div class="large-nav mobile">
+      <ul>
+        {% for link in linklists.main-menu.links %}
+          <li class="{% if link.active or parent_link_active %} active{% endif %}{% if has_sub_menu or has_sub_categories %} has-dropdown{% endif %}{% if forloop.first %} first{% elsif forloop.last %} last{% endif %}">
+            <a href="{{ link.url }}">{{ link.title }}{% if has_sub_menu or has_sub_categories %} <i class="fa fa-angle-down"></i>{% endif %}</a>          
+          </li>
+        {% endfor %}
+
+        <li>
+          <a href="/cart" title="Cart">Cart ({{ cart.item_count }})</a>
+        </li>
+      </ul>
+
+      <div class="newsletter" id="desktop-newsletter">
+        {% render 'newsletter-signup' %}
+      </div>
+    </div>
+
+    <div class="newsletter" id="mobile-newsletter">
+      {% render 'newsletter-signup' %}
+    </div>
+
+  {% endif %}
 
   <script type="application/json" data-ajax-cart-initial-state >
     {{ cart | json }}
@@ -75,24 +92,22 @@
 
   <script>
     // Open mini-cart drawer
-    $('li.cart-link').on('click', function() {
-      jQuery('.cart-overlay').addClass('js-my-cart-open');
-    });
+    // $('li.cart-link').on('click', function() {
+    //   jQuery('.cart-overlay').addClass('js-my-cart-open');
+    // });
 
-    // Open drawer on 'Add to cart'
-    jQuery('form.single-product').on('submit', function() {
-      jQuery('.cart-overlay').addClass('js-my-cart-open');
-    });
+    // // Open drawer on 'Add to cart'
+    // jQuery('form.single-product').on('submit', function() {
+    //   jQuery('.cart-overlay').addClass('js-my-cart-open');
+    // });
 
-    // Close mini-cart drawer
-    jQuery('.closer > .container').on('click', function() {
-      jQuery('.cart-overlay').removeClass('js-my-cart-open');
-    });
+    // // Close mini-cart drawer
+    // jQuery('.closer > .container').on('click', function() {
+    //   jQuery('.cart-overlay').removeClass('js-my-cart-open');
+    // });
   </script>
 
-  <footer>
-    {% render 'mobile-nav' %}
-  </footer>
+
 
   {{ 'shop.js'  | asset_url | script_tag }}
 
