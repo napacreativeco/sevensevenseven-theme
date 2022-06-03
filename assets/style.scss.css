@@ -194,6 +194,7 @@ form.js-ajax-cart-form-in-progress [type="submit"]:after {
   .large-nav ul {
       list-style: none;
       margin: 0;
+      padding: 0;
       width: 100%;
   }
   .large-nav a {
@@ -240,7 +241,7 @@ form.js-ajax-cart-form-in-progress [type="submit"]:after {
         width: 100%;
     }
     .index-container {
-      padding: 0 0 50px 0;
+      padding: 0;
     }
     .large-nav {
       padding: 0;
