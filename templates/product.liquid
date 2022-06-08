@@ -38,7 +38,7 @@ To Finish:
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding-top: 80px;
+      justify-content: flex-start;
     }
     .single-product .images ul::-webkit-scrollbar {
       display: none; /* for Chrome, Safari, and Opera */
@@ -50,6 +50,12 @@ To Finish:
     li.gallery-image {
       display: flex;
       justify-content: center;
+      object-fit: contain;
+      width: 100%;
+    }
+    .single-product .images li img,
+    li.gallery-image img {
+      width: 100%;
     }
 
     /* Info */
@@ -57,15 +63,18 @@ To Finish:
         padding: 20px;
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
+        justify-content: space-around;
+        align-items: stretch;
       }
       .single-product .info .bottom {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        margin-top: 100px;
       }
     .single-product .row .info {
       padding: 20px 20px 20px 60px;
+      height: 100%;
       max-height: 100vh;
     }
     .single-product h1 {
@@ -74,11 +83,12 @@ To Finish:
       text-transform: uppercase;
     }
     .single-product .description {
-      max-width: 400px;
+      width: 100%;
     }
     .single-product .description p {
-      font-size: 0.9rem;
+      font-size: 2rem;
       font-family: var(--arial);
+      line-height: 1.1;
     }
     .single-product .actions {
       display: inline-block;
@@ -108,7 +118,7 @@ To Finish:
       display: -ms-flexbox;
       display: flex;
       overflow: hidden;
-      margin: 0 16px 0 0;
+      margin: 0 30px 0 0;
     }
     .switch-field:last-of-type {
       margin: 0;
@@ -124,9 +134,9 @@ To Finish:
     .switch-field label {
       background: transparent;
       color: var(--white);
-      font-size: 2rem;
+      font-size: 3rem;
       text-align: center;
-      padding: 8px 12px;
+      padding: 20px;
       /* margin-right: -1px; */
       -webkit-transition: all 0.5s ease-in-out;
       -o-transition: all 0.5s ease-in-out;
@@ -153,7 +163,7 @@ To Finish:
 
     /* Price */
     .product-price {
-      font-size: 3vw;
+      font-size: 4rem;
     }
     /* Submit */
     .single-product input[type="submit"] {
@@ -166,7 +176,9 @@ To Finish:
       margin-top: 20px;
       border-radius: 0px;
       color: var(--white);
-      font-size: 2rem;
+      font-size: 3rem;
+      font-weight: 900;
+      white-space: pre-line;
     }
     .single-product input[type="submit"]:hover {
       background: var(--white);
@@ -191,7 +203,7 @@ To Finish:
     * MEDIA QUERIES
     * =======================
     **/
-    @media (max-width: 770px) {
+    @media (max-width: 767px) {
   
       .single-product .row,
       form.single-product {
@@ -205,7 +217,14 @@ To Finish:
         max-height: auto;
         text-align: center;
       }
+      .single-product .info .bottom {
+        align-items: stretch;
+      }
+      .single-product .info .bottom .right {
+        padding: 0 40px;
+      }
       .single-product .description {
+        font-size: 1.8rem;
         margin: 0 auto;
       }
       .single-product .images ul {
@@ -238,9 +257,31 @@ To Finish:
       .single-product h1 {
         font-size: 10vw;
       }
+      /* Variants */
+      ul.variants-list {
+        grid-gap: 10px;
+      }
+      li.switch-field {
+        margin: 0;
+        border: 2px solid var(--white);
+        text-align: center;
+        display: flex;
+        justify-content: center;
+      }
+      .switch-field label {
+        font-size: 2rem;
+        border: 0;
+      }
       /* Price */
       .product-price {
-        font-size: 8vw;
+        font-size: 15vw;
+      }
+      /* Submit */
+      .single-product input[type="submit"] {
+        padding: 10px 20px;
+        width: 100%;
+        margin: 20px 0;
+        font-size: 2rem;
       }
     }
   

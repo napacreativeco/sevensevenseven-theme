@@ -215,9 +215,10 @@ form.js-ajax-cart-form-in-progress [type="submit"]:after {
   #mobile-newsletter {
     display: none;
   }
-  @media screen and (max-width: 770px) {
+  @media screen and (max-width: 767px) {
     .large-nav.mobile {
         display: flex;
+        margin-top: 80px;
     }
     #desktop-newsletter {
       display: none;
@@ -236,7 +237,7 @@ form.js-ajax-cart-form-in-progress [type="submit"]:after {
   * MEDIA QUERIES
   * =====================================
   */
-  @media screen and (max-width: 770px) {
+  @media screen and (max-width: 767px) {
     .newsletter {
         width: 100%;
     }
