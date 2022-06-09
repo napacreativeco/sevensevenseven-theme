@@ -1,11 +1,11 @@
-/* CSS stykes go in here */
 /*
  *
  * Resets
  *
  */
-* {
-    box-sizing: border-box;
+ * {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -165,6 +165,8 @@ body {
 */
 .items { 
     opacity: 1;
+    -webkit-transition: opacity .2s;
+    -o-transition: opacity .2s;
     transition: opacity .2s;
 }
 /* Make the area with controls visually disabled */
@@ -185,10 +187,19 @@ form.js-ajax-cart-form-in-progress [type="submit"]:after {
     display: none;
 }
 .large-nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: space-between;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     padding: var(--border-padding);
   }
   .large-nav ul {
@@ -210,6 +221,8 @@ form.js-ajax-cart-form-in-progress [type="submit"]:after {
   }
   /* Newsletter */
   #desktop-newsletter {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
   }
   #mobile-newsletter {
@@ -217,6 +230,8 @@ form.js-ajax-cart-form-in-progress [type="submit"]:after {
   }
   @media screen and (max-width: 767px) {
     .large-nav.mobile {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         margin-top: 80px;
     }
@@ -224,12 +239,18 @@ form.js-ajax-cart-form-in-progress [type="submit"]:after {
       display: none;
     }
     #mobile-newsletter {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
     }
   }
   .newsletter {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: flex-end;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
     width: 50%;
   }
   /*
@@ -252,8 +273,13 @@ form.js-ajax-cart-form-in-progress [type="submit"]:after {
       font-size: 12vw;
     }
     .large-nav ul {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      flex-direction: column;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
       padding: 20px;
       width: 100%;
     }

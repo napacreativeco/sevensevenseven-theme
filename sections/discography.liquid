@@ -1,23 +1,42 @@
 <style>
-    .discography-container {
+ .discography-container {
+        display: -ms-grid;
         display: grid;
         padding: 80px 0 40px 0;
         min-height: 60vh;
     }
     .discography-container ul.releases {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
         list-style: none;
         padding: 40px;
         margin: 0px;
     }
     .discography-container .release {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
     }
     .discography-container .image {
       margin-bottom: 24px;
@@ -53,6 +72,8 @@
     .release-info {
       /* height: 0;
       overflow: hidden; */
+        -webkit-transition: height 0.3s;
+        -o-transition: height 0.3s;
         transition: height 0.3s;
         -ms-overflow-style: none; /* for Internet Explorer, Edge */
         scrollbar-width: none; /* for Firefox */
