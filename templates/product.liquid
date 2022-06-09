@@ -5,7 +5,6 @@ To Finish:
 {% endcomment %}
 
 <style>
-
   .single-product {
       font-size: 1rem;
     }
@@ -630,12 +629,12 @@ To Finish:
               <div class="right">
                 <div id="product-add">
                   <input type="submit" name="add" id="add" value="{{ add_to_cart | escape }}">
-                </div>
-                {% if form.posted_successfully? %}
+                  {% if form.posted_successfully? %}
                     <script>console.log('Added to cart');</script>
-                {% else %}
-                    {{ form.errors | default_errors }}
-                {% endif %}
+                  {% else %}
+                      {{ form.errors | default_errors }}
+                  {% endif %}
+                </div>
               </div>
               
             </div>
