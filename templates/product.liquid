@@ -473,15 +473,21 @@ To Finish:
                 align-items: stretch;
       }
       .single-product .info .bottom .right {
-        padding: 0 40px;
+        padding: 0 20px;
       }
-      .single-product .description {
-        font-size: 1.8rem;
+      /* Title */
+      .single-product h1 {
+        font-size: 8vw;
+      }
+      .single-product .description p {
+        font-size: 1.4rem;
         margin: 0 auto;
       }
       .single-product .images ul {
         max-height: 100%;
         overflow: auto;
+        margin: 0 10px;
+        width: calc(100% - 20px);
       }
       .single-product .row > *:nth-child(1) {
           -ms-grid-row: 1;
@@ -512,10 +518,7 @@ To Finish:
             -ms-flex-direction: column;
                 flex-direction: column;
       }
-      /* Title */
-      .single-product h1 {
-        font-size: 10vw;
-      }
+
       /* Variants */
       ul.variants-list {
         grid-gap: 10px;
