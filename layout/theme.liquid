@@ -83,13 +83,10 @@
     </div>
 
   {% endif %}
-
-  <script type="application/json" data-ajax-cart-initial-state >
-    {{ cart | json }}
-  </script>
   
+  <script type="application/json" data-ajax-cart-initial-state >{{ cart | json }}</script>
   <script type="module">
-    import '{{ "liquid-ajax-cart-v1.9.0.js" | asset_url }}';
+    import '{{ 'liquid-ajax-cart.js' | asset_url }}';
   </script>
 
   <script>

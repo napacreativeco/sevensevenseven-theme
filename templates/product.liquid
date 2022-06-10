@@ -559,8 +559,33 @@ To Finish:
       .next, .prev {
         font-size: 40px;
       }
+
     }
-  
+      /* Make the submit button visually disabled */
+      form.js-ajax-cart-form-in-progress input[type="submit"] {
+        opacity: 0.3 !important;  
+      }
+
+      /* Show a loading indicator */
+      form.js-ajax-cart-form-in-progress input[type="submit"]::after { 
+      content: 'Adding to cart…';
+      display: block; 
+      color: red !important;
+      opacity: 1;
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      top: 0;
+    }
+    .success-messages {
+      font-size: 1.2rem;
+      padding: 10px 0;
+    }
+    .my-cart__items { 
+      opacity: 1;
+      transition: opacity .2s;
+    }
+    
   </style>
     
     {% assign add_to_cart = 'Add to cart' %}
@@ -577,7 +602,7 @@ To Finish:
       * PRODUCT FORM
       * 
       {% endcomment %}
-      <form action="/cart/add" method="post" class="single-product" enctype="multipart/form-data" id="add-to-cart">
+      <form action="{{ routes.cart_add_url }}" method="post" class="single-product" enctype="multipart/form-data" id="add-to-cart">
         <div class="row">
 
           <div class="images">
@@ -688,7 +713,7 @@ To Finish:
                     <!-- Errors and messages appear here --> 
                   </div>
                   
-              
+                  <div data-ajax-cart-messages="{{ item.key }}"></div>
                 {% else %}
               
                     <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
@@ -727,12 +752,17 @@ To Finish:
               <div class="right">
                 <div id="product-add">
                   <input type="submit" name="add" id="add" value="{{ add_to_cart | escape }}">
-                  {% if form.posted_successfully? %}
-                    <script>console.log('Added to cart');</script>
-                  {% else %}
-                      {{ form.errors | default_errors }}
-                  {% endif %}
                 </div>
+
+                {% if form.posted_successfully? %}
+                  <h3 style="color: red">ADDED TO CART</h3>
+                  <script>console.log('working');</script>
+                {% else %}
+                    {{ form.errors | default_errors }}
+                {% endif %}
+                <div data-ajax-cart-messages="form"></div>
+                <div class="success-messages"></div>
+
               </div>
               
             </div>
@@ -874,3 +904,13 @@ To Finish:
       
     });
   </script>
+
+<script>
+  jQuery('input[type="submit"]').on('click', function() {
+    jQuery.getJSON('/cart.js', function(cart) {
+      jQuery('.success-messages').html('<h3>There are now ' + cart.item_count + ' items in the cart.</h3>');
+      jQuery('.the_count').html(cart.item_count);
+    });
+  })
+
+</script>
