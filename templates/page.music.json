@@ -13,11 +13,11 @@
             "spotify": "https:\/\/open.spotify.com\/artist\/7J0hrNYCO5DgAx0XaRJqkh\/discography\/all?pageUri=spotify:album:5pb2qoPjdwPtkWUh64Jc8r",
             "apple_music": "https:\/\/music.apple.com\/us\/album\/dftk\/1606767651",
             "itunes_store": "",
-            "tidal": "#",
-            "soundcloud": "#",
-            "pandora": "#",
-            "deezer": "#",
-            "audiomack": "#"
+            "tidal": "",
+            "soundcloud": "",
+            "pandora": "",
+            "deezer": "",
+            "audiomack": ""
           }
         }
       },
