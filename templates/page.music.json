@@ -19,10 +19,28 @@
             "deezer": "https:\/\/www.deezer.com\/us\/album\/291518892",
             "audiomack": "https:\/\/audiomack.com\/yung-kayo\/album\/dftk?ffm=FFM_2c2e6b77119d93b47b7fba3243432e97"
           }
+        },
+        "f94e1bed-ea96-42bf-b3e9-5551c824675c": {
+          "type": "release",
+          "settings": {
+            "release_artwork": "shopify:\/\/shop_images\/makememad_f75e65d7-90c1-49de-aca0-8c5701992fdf.jpg",
+            "release_title": "make me mad",
+            "artist_name": "Chief Keef",
+            "youtube": "https:\/\/www.youtube.com\/watch?src=Linkfire&lId=21d936ba-991e-4d4d-b72a-41c472a9f7cf&cId=d3d58fd7-4c47-11e6-9fd0-066c3e7a8751&v=9DYU9sehfgg&feature=youtu.be&ab_channel=sevensevenseven",
+            "spotify": "https:\/\/open.spotify.com\/album\/1wtxljfuEtaUPFli7YVgKq?referral=labelaffiliate&utm_source=1100lvTJ58I8&utm_medium=Universal_IGA&utm_campaign=labelaffiliate",
+            "apple_music": "https:\/\/music.apple.com\/us\/album\/1628182921?app=music&at=1010lIJf&lId=25907193&cId=none&sr=2&src=Linkfire&itscg=30440&itsct=catchall_p2&ct=LFV_74eae608c0645fbbee27ace88b291a91&ls=1",
+            "itunes_store": "https:\/\/music.apple.com\/us\/album\/1628182921?ign-itscg=30440&ign-itsct=catchall_p3",
+            "tidal": "https:\/\/tidal.com\/browse\/album\/232397606",
+            "soundcloud": "",
+            "pandora": "https:\/\/www.pandora.com\/artist\/sevensevenseven-and-chief-keef\/make-me-mad-single-explicit\/ALdXnj7zKjXhmqk?%24ios_deeplink_path=pandorav4%3A%2F%2Fbackstage%2Falbum%3Ftoken%3DAL%3A15826473&%24android_deeplink_path=pandorav4%3A%2F%2Fbackstage%2Falbum%3Ftoken%3DAL%3A15826473&~channel=Partner%20Catalog%20Search%20API%20-%20Linkfire&part=lf&corr=2f68c7f1b41e21fd5004225470d5b99e&partnerName=Linkfire&~campaign=Partner%20Customer%20ID%20-%2021d936ba-991e-4d4d-b72a-41c472a9f7cf&sharedId=2f68c7f1b41e21fd5004225470d5b99e&_branch_match_id=845210191391755231&utm_source=Partner%20Catalog%20Search%20API%20-%20Linkfire&utm_campaign=Partner%20Customer%20ID%20-%2021d936ba-991e-4d4d-b72a-41c472a9f7cf&_branch_referrer=H4sIAAAAAAAAA62QXWvCMBSGf029KVGbRmsHZcicIJMh7MY7OU1ObGybZEnUsV%2B%2FlG16uZvBITmE5%2F0gTQjWP0wmFrQwDsZg7bhTup08JpQJ9G0w9nB2XdUMYJIvE7qOc71ex78Sbvr4Ai4oH%2BLi8YL6fpBIEd4olKRFlBHooUXSxwFBvNLHDgl%2B2E5xNciXW7HXp%2BLz5bRv%2Bvd2FGso4w8C0Q69DhZCU%2F1EX9itUA289QGOOFTp6nOf5OtgWtRJvlpuI5bNFnTOinwwjGpnlPhP0%2BKZN6A1dtUu%2FoRGlz5BgM4c0zcEx5t0udukJN3GNKkcjmykqk6OuHGuonK%2B4IXMapYhzaSYTaeM0hkrpmJWl%2BU3HT1focfqZjFkQm9BHfU99OyD6eOyWcU0mokyn9dAyjJDwgQTpC4oEJZxFu9SFlyOfAMOxUb82eIL34i6pCsCAAA%3D",
+            "deezer": "https:\/\/www.deezer.com\/us\/album\/325188067?app_id=140685&utm_source=partner_linkfire&utm_campaign=2f68c7f1b41e21fd5004225470d5b99e&utm_medium=Original&utm_term=objective-stream&utm_content=album-325188067",
+            "audiomack": ""
+          }
         }
       },
       "block_order": [
-        "5a3a748f-dec3-4361-8bc6-0d08f731d393"
+        "5a3a748f-dec3-4361-8bc6-0d08f731d393",
+        "f94e1bed-ea96-42bf-b3e9-5551c824675c"
       ],
       "settings": {
       }
