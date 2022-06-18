@@ -70,6 +70,9 @@
     }
     /* Accordion */
     .release-info {
+      display: none;
+      min-width: 100% !important;
+      width: 100% !important;
       /* height: 0;
       overflow: hidden; */
         -webkit-transition: height 0.3s;
@@ -98,18 +101,18 @@
         {% when 'release' %}
             <li class="release {{ block.shopify_attributes }}">
 
-                <div class="image" onclick="releaseInfo()">
+                <div class="image">
                     <img src="{{ block.settings.release_artwork | image_url: width: 2048 }}" alt="{{ block.settings.release_title }} by {{ block.settings.artist_name }}" />
                 </div>
 
-                <div class="release-info" style="height: 0px; overflow: hidden;">
+                <div class="release-info">
 
                   <div class="titles">
                     <p>{{ block.settings.release_title }}</p>
                     <p>{{ block.settings.artist_name }}</p>
                   </div>
 
-                  <div class="links">
+                  <div class="links" id="{{ block.settings.artist_name }}">
                     <ul>
                       <li>
                         <a href="{{ block.settings.youtube }}" title="{{ block.settings.artist_name }} on YouTube">YouTube</a>
@@ -152,18 +155,13 @@
 </div>
 
 <script>
-  function releaseInfo() {
-    var infoBlock = document.querySelector('.release-info');
+  (function($) {
+    $('.release').on('click', function() {
+      $(this).find('.release-info').toggle('display');
+    });
+  })( jQuery );
 
-    if ( infoBlock.style.height == '0px' ) {
-      infoBlock.style.height = '100%';
-      infoBlock.style.overflow = 'auto';
-    } else {
-      infoBlock.style.height = '0px';
-      infoBlock.style.overflow = 'hidden';
-    }
 
-  }
 </script>
 
 
