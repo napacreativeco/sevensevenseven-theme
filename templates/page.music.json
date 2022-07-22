@@ -3,6 +3,23 @@
     "main": {
       "type": "discography",
       "blocks": {
+        "c3fcd357-ff76-4a4d-ac84-288ddf897f66": {
+          "type": "release",
+          "settings": {
+            "release_artwork": "shopify:\/\/shop_images\/finall.png",
+            "release_title": "Hollon (Feat. Yeat)",
+            "artist_name": "Yung Kayo",
+            "youtube": "https:\/\/music.youtube.com\/playlist?list=OLAK5uy_m1ia0-o8QeZmsFnwJIbcOtQoFUFQiC2zw",
+            "spotify": "https:\/\/open.spotify.com\/album\/59ae3rcz9fgryASqEL2BOG?referral=labelaffiliate&utm_source=1100lvX3fmMk&utm_medium=Universal_IGA&utm_campaign=labelaffiliate",
+            "apple_music": "https:\/\/music.apple.com\/us\/album\/1634322933?app=music&at=1010lIJf&ct=LFV_83192629fbbc914ba5c6d4a44c210b9f&itscg=30440&itsct=catchall_p2&lId=26072509&cId=none&sr=2&src=Linkfire&ls=1",
+            "itunes_store": "https:\/\/music.apple.com\/us\/album\/1634322933?app=itunes&at=1010lIJf&ct=LFV_83192629fbbc914ba5c6d4a44c210b9f&itscg=30440&itsct=catchall_p3&lId=26072509&cId=none&sr=3&src=Linkfire&ls=1",
+            "tidal": "https:\/\/tidal.com\/browse\/album\/237651503",
+            "soundcloud": "",
+            "pandora": "https:\/\/www.pandora.com\/artist\/sevensevenseven-yeat-and-yung-kayo\/hollon-single-explicit\/ALJvzlbrr2jZplV?%24ios_deeplink_path=pandorav4%3A%2F%2Fbackstage%2Falbum%3Ftoken%3DAL%3A16641401&%24android_deeplink_path=pandorav4%3A%2F%2Fbackstage%2Falbum%3Ftoken%3DAL%3A16641401&~channel=Partner%20Catalog%20Search%20API%20-%20Linkfire&part=lf&corr=83192629fbbc914ba5c6d4a44c210b9f&partnerName=Linkfire&~campaign=Partner%20Customer%20ID%20-%20f5809fe7-2237-489d-9b16-9f74748b5fe1&sharedId=83192629fbbc914ba5c6d4a44c210b9f&_branch_match_id=1078905699456818765&utm_source=Partner%20Catalog%20Search%20API%20-%20Linkfire&utm_campaign=Partner%20Customer%20ID%20-%20f5809fe7-2237-489d-9b16-9f74748b5fe1&_branch_referrer=H4sIAAAAAAAAA62QXWvCMBSGf029KVHbxtYOypA5wSFDGOxiN3KSnrZZ0yQkUed%2B%2FdKx6eVuBofDITzvB%2Bm8N%2B5uNjOgam1hCsZMpVD97D5KaY2u99ocjlZW3QhG2SpKN2HO5%2FP0V8L1EF7AeuF8OByeUN0WuSB4ElByOaqW9HDRAeq0lFoRJ1QrkeCHkYKLUb3aPZ0%2BJbM2fX8z8nUSWgjtDjWiGWsdDPiu%2Bkk%2B0WsfBrx3Hlocm0h2HKJs43WPKsrWq13AkjynCZ0no2FQWy3q%2FzQtHnkHSqGs9uEjFNr4ATxI3cYvCJZ38Wq%2FjUm8C2mNsDgxgapkM%2BHa2mqZJWWap2XDGC8TymDB85oCpTxN5qxsvung%2BQwDVleLMRMGA6JVt9Cj83oIx3Yd0prFcl42WJA0zQpCl2VNSpbkpGwKWtAlWzSYTFwHFutt%2FWeLL7CRMH0qAgAA",
+            "deezer": "",
+            "audiomack": ""
+          }
+        },
         "f94e1bed-ea96-42bf-b3e9-5551c824675c": {
           "type": "release",
           "settings": {
@@ -39,6 +56,7 @@
         }
       },
       "block_order": [
+        "c3fcd357-ff76-4a4d-ac84-288ddf897f66",
         "f94e1bed-ea96-42bf-b3e9-5551c824675c",
         "5a3a748f-dec3-4361-8bc6-0d08f731d393"
       ],
